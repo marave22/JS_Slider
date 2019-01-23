@@ -1,93 +1,203 @@
-let picturesArray = ['slider_image_1.jpg', 'slider_image_2.jpg', 'slider_image_3.jpg', 'slider_image_4.jpg', 'slider_image_5.jpg', 'slider_image_6.jpg', 'slider_image_7.jpg', 'slider_image_8.jpg', 'slider_image_9.jpg', 'slider_image_10.jpg', 'slider_image_11.jpg', 'slider_image_12.jpg', 'slider_image_13.jpg', 'slider_image_14.jpg', 'slider_image_15.jpg', 'slider_image_16.jpg'];
+let picturesArray = ['slider_image_1.jpg', 'slider_image_2.jpg', 'slider_image_3.jpg', 'slider_image_4.jpg', 'slider_image_5.jpg', 'slider_image_6.jpg', 'slider_image_7.jpg', 'slider_image_8.jpg'];
+
+//Images Main Div
+let mainImagesDiv = document.createElement('div');
+let mainImagesDivClass = document.createAttribute('class');
+let mainImagesDivId = document.createAttribute('id');
+mainImagesDivClass.value = "mainImagesDivClass";
+mainImagesDiv.setAttributeNode(mainImagesDivClass);
+mainImagesDivId.value = "mainImagesDivId";
+mainImagesDiv.setAttributeNode(mainImagesDivId);
 
 //Main_Div_After_Section
 let mainDiv = document.createElement('div');
 let mainDivClass = document.createAttribute('class');
-mainDivClass.value = "divClass";
+let mainDivId = document.createAttribute('id');
+mainDivClass.value = "mainDivClass";
 mainDiv.setAttributeNode(mainDivClass);
+mainDivId.value = "mainDivId";
+mainDiv.setAttributeNode(mainDivId);
+mainDiv.appendChild(mainImagesDiv);
 //Main_Section_append_MAinDIV
 let element = document.getElementById('main');
 element.appendChild(mainDiv);
 
 
 
+//modal_container
+let modalContainer = document.createElement('div');
+let modalContainClass = document.createAttribute('class');
+let modalContainId = document.createAttribute('id');
+modalContainClass.value = "modalContainClass";
+modalContainer.setAttributeNode(modalContainClass);
+modalContainId.value = "modalContainId";
+modalContainer.setAttributeNode(modalContainId);
+
+//modal container into main Div
+let childMainDiv = document.getElementById('mainImagesDivId');
+let parentMainDiv = childMainDiv.parentNode;
+parentMainDiv.insertBefore(modalContainer, childMainDiv.nextSibling);
+
+//modal
+let modal = document.createElement('div');
+let modalClass = document.createAttribute('class');
+let modalId = document.createAttribute('id');
+modalClass.value = "modalClass";
+modalId.value = "modalId";
+modal.setAttributeNode(modalClass);
+modal.setAttributeNode(modalId);
+modalContainer.appendChild(modal);
+
+//close span
+let closeSpan = document.createElement('span');
+let closeSpanClass = document.createAttribute('class');
+let closeSpanId = document.createAttribute('id');
+closeSpanClass.value = "closeSpanClass";
+closeSpanId.value = "closeSpanId";
+closeSpan.setAttributeNode(closeSpanClass);
+closeSpan.setAttributeNode(closeSpanId);
+closeSpan.innerHTML = "&#9587";
+modal.appendChild(closeSpan);
+
+
+//modal Div
+let modalDiv = document.createElement('div');
+let modalDivClass = document.createAttribute('class');
+let modalDivId = document.createAttribute('id');
+modalDivClass.value = "modalDivClass";
+modalDivId.value = "modalDivId";
+modalDiv.setAttributeNode(modalDivClass);
+modalDiv.setAttributeNode(modalDivId);
+
+//modal container child
+let childModal = document.getElementById('closeSpanId');
+let parentModal = childModal.parentNode;
+parentModal.insertBefore(modalDiv, childModal.nextSibling);
+
+//spanLeft
+let leftSpan = document.createElement('span');
+let leftSpanClass = document.createAttribute('class');
+let leftSpanId = document.createAttribute('id');
+leftSpanClass.value = "leftSpanClass";
+leftSpanId.value = "leftSpanId";
+leftSpan.setAttributeNode(leftSpanClass);
+leftSpan.setAttributeNode(leftSpanId);
+leftSpan.innerHTML = "&#8918";
+modalDiv.appendChild(leftSpan);
+//ModalImageSlide
+//Slide Image_Div
+let imageSlideDiv = document.createElement('div');
+let imageSlideDivClass = document.createAttribute('class');
+let imageSlideDivId = document.createAttribute('id');
+imageSlideDivId.value = 'imgSlideDivId';
+imageSlideDiv.setAttributeNode(imageSlideDivId);
+imageSlideDivClass.value = "imgSlideDivClass";
+imageSlideDiv.setAttributeNode(imageSlideDivClass);
+
+
+
+//image Slide div into modalDiv
+let childSlideDiv = document.getElementById('leftSpanId');
+let parentSlideDiv = childSlideDiv.parentNode;
+parentSlideDiv.insertBefore(imageSlideDiv, childSlideDiv.nextSibling);
+
+//spanRight
+let rightSpan = document.createElement('span');
+let rightSpanClass = document.createAttribute('class');
+let rightSpanId = document.createAttribute('id');
+rightSpanClass.value = "rightSpanClass";
+rightSpanId.value = "rightSpanId";
+rightSpan.setAttributeNode(rightSpanClass);
+rightSpan.setAttributeNode(rightSpanId);
+rightSpan.innerHTML = "&#8919";
+
+let childRightSpan = document.getElementById('imgSlideDivId');
+let parentRight = childRightSpan.parentNode;
+parentRight.insertBefore(rightSpan, childRightSpan.nextSibling);
+
 for (let i = 0; i < picturesArray.length; i++) {
-
-    // Left And Right Buttons
-    // Left
-    let btnLeft = document.createElement('button');             //newNode
-    btnLeft.innerHTML = "&#8678";
-    let btnLeftClass = document.createAttribute('class');
-    btnLeftClass.value = "left";
-    btnLeft.setAttributeNode(btnLeftClass);
-    let btnLeftAttr = document.createAttribute('onclick');
-    btnLeftAttr.value = "plusSlide(-1)";
-    btnLeft.setAttributeNode(btnLeftAttr);
-
-    //Right
-    let btnRight = document.createElement('button');            //newNode
-    btnRight.innerHTML = "&#8680";
-    let btnRightClass = document.createAttribute('class');
-    btnRightClass.value = "left";
-    btnRight.setAttributeNode(btnRightClass);
-    let btnRightAttr = document.createAttribute('onclick');
-    btnRightAttr.value = "plusSlide(1)";
-    btnRight.setAttributeNode(btnRightAttr);
 
     //Image_Div
     let imageDiv = document.createElement('div');
     let imageDivClass = document.createAttribute('class');
     let imageDivId = document.createAttribute('id');
-    imageDivId.value = `divId${i}`;
+    imageDivId.value = `imgDivId${i}`;
     imageDiv.setAttributeNode(imageDivId);
-    imageDivClass.value = "imgDivClass";                                // parentDiv
+    imageDivClass.value = "imgDivClass";
     imageDiv.setAttributeNode(imageDivClass);
-    mainDiv.appendChild(imageDiv);
+    mainImagesDiv.appendChild(imageDiv);
     //image
     let path = "./images/";
-    let image = document.createElement('img');                 //childElement
+    let image = document.createElement('img');
     let imageSrc = document.createAttribute('src');
     let imageClass = document.createAttribute('class');
     let imageId = document.createAttribute('id');
     imageId.value = `imgId${i}`;
     image.setAttributeNode(imageId);
-
-    imageClass.value = "imgStyle";
+    imageClass.value = "imgClass";
     image.setAttributeNode(imageClass);
     imageSrc.value = path + picturesArray[i];
     image.setAttributeNode(imageSrc);
     imageDiv.appendChild(image);
-
-    //
-    // let childElementLeft = document.getElementById(`imgId${i}`);
-    // let parentDivLeft = childElementLeft.parentNode;
-    // parentDivLeft.insertBefore(btnLeft, childElementLeft);
-    // let childElementRight = document.getElementById(`imgId${i}`);
-    // let parentDivRight = childElementRight.parentNode;
-    // parentDivRight.insertBefore(btnRight, childElementRight.nextSibling);
 }
 
-let imageElement = document.getElementsByClassName('imgStyle');
-let imageDivElement = document.getElementsByClassName('imgDivClass');
 for (let j = 0; j < picturesArray.length; j++) {
-    imageElement[j].addEventListener('click', function () {
-        imageElement[j].style.width = "800px";
-        imageElement[j].style.height = "560px";
-        imageElement[j].style.transition = "0.6s";
-        imageDivElement[j].style.display = "block";
-        imageDivElement[j].style.paddingLeft= "23%";
+    //Slide image
+    let path = "./images/";
+    let imageSlide = document.createElement('img');
+    let imageSlideSrc = document.createAttribute('src');
+    let imageSlideClass = document.createAttribute('class');
+    let imageSlideId = document.createAttribute('id');
+    imageSlideId.value = `imgSlideId${j}`;
+    imageSlide.setAttributeNode(imageSlideId);
+    imageSlideClass.value = "imgSlideClass";
+    imageSlide.setAttributeNode(imageSlideClass);
+    imageSlideSrc.value = path + picturesArray[j];
+    imageSlide.setAttributeNode(imageSlideSrc);
+    imageSlideDiv.appendChild(imageSlide);
+}
 
-        // let slideIndex = 1;
-        // showSlide(slideIndex);
-        //
-        // function plusSlide(n) {
-        //     showSlide(slideIndex += n);
-        // }
+for (let k = 0; k < picturesArray.length; k++) {
+    let slideShow = document.getElementById(`imgId${k}`);
+    let closeSlide = document.getElementById('closeSpanId');
+    slideShow.addEventListener('click', () => {
+        document.getElementById('mainImagesDivId').style.display = "none";
+        document.getElementById('modalId').style.display = "block";
+        document.getElementById('main').style.backgroundColor = "black";
+        document.getElementById(`imgId${k}`).style.width = "800px";
+        document.getElementById(`imgId${k}`).style.height = "560px";
+        document.getElementById(`imgId${k}`).style.transition = "0.6s";
+    }, true);
+
+
+    closeSlide.addEventListener('click', () => {
+        document.getElementById('mainImagesDivId').style.display = "block";
+        document.getElementById('modalId').style.display = "none";
+        document.getElementById(`imgId${k}`).style.width = "400px";
+        document.getElementById(`imgId${k}`).style.height = "280px";
+        document.getElementById(`imgId${k}`).style.transition = "0.6s";
+        document.getElementById('main').style.backgroundColor = "#e0d8d3";
     });
+}
 
-    // imageElement[j].addEventListener('mouseout', function () {
-    //     imageElement[j].style.width = "400px";
-    //     imageElement[j].style.height = "280px";
-    //     imageElement[j].style.transition = "0.6s";
-    // });
+let slideIndex = 1;
+Slide(slideIndex);
+
+function nextImage(n) {
+    Slide(slideIndex += n);
+}
+
+function Slide(n) {
+    let i;
+    let x = document.getElementsByClassName("imgSlideClass");
+    if (n > x.length) {
+        slideIndex = 1;
+    }
+    if (n < 1) {
+        slideIndex = x.length;
+    }
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+    }
+    x[slideIndex-1].style.display = "block";
 }

@@ -3,15 +3,17 @@
     margin: 0;
     padding: 0;
 }
-
+body {
+    background-color: #e0d8d3;
+}
 #main {
     width: 100%;
     height: auto;
-    background-color: #e0d8d3;
 }
 /*main div*/
-.divClass {
+.mainDivClass {
     padding-left: 8%;
+    padding-top: 10%;
 }
 
 /*image div class*/
@@ -19,22 +21,46 @@
 .imgDivClass {
     display: inline;
     width: 100%;
+    cursor: pointer;
 }
 
 /*image style*/
-.imgStyle {
+.imgClass {
     width: 400px;
     height: 280px;
     padding: 15px;
     border-radius: 15px;
     border: 1px solid #ddd;
-
 }
-.imgStyle:hover {
+.imgClass:hover {
     box-shadow: 0 0 2px 1px rgba(5, 76, 186, 0.5);
 }
-/*.imgStyle:hover {*/
-    /*width: 800px;*/
-    /*height: 560px;*/
-    /*transition: 1s;*/
+
+.closeSpanClass {
+    display: flex;
+    flex-direction: row-reverse;
+    padding-right: 50px;
+    color: grey;
+    cursor: pointer;
+}
+.leftSpanClass {
+    display: flex;
+    flex-direction: row;
+    color: grey;
+    font-size: 30px;
+}
+
+.rightSpanClass {
+    display: flex;
+    flex-direction: row-reverse;
+    color: grey;
+    font-size: 30px;
+}
+.imgSlideClass {
+    /*display: none;*/
+    width: 800px;
+    height: 560px;
+}
+/*imgSlideDivClass {*/
+    /*display: none;*/
 /*}*/
