@@ -83,7 +83,9 @@ leftSpanId.value = "leftSpanId";
 leftSpan.setAttributeNode(leftSpanClass);
 leftSpan.setAttributeNode(leftSpanId);
 leftSpan.innerHTML = "&#8918";
+
 modalDiv.appendChild(leftSpan);
+
 //ModalImageSlide
 //Slide Image_Div
 let imageSlideDiv = document.createElement('div');
@@ -162,8 +164,8 @@ for (let k = 0; k < picturesArray.length; k++) {
     let closeSlide = document.getElementById('closeSpanId');
     slideShow.addEventListener('click', () => {
         document.getElementById('mainImagesDivId').style.display = "none";
-        document.getElementById('modalId').style.display = "block";
-        document.getElementById('main').style.backgroundColor = "black";
+        document.getElementById('modalContainId').style.display = "block";
+        document.getElementById('main').style.backgroundColor = "#0000006b";
         document.getElementById(`imgId${k}`).style.width = "800px";
         document.getElementById(`imgId${k}`).style.height = "560px";
         document.getElementById(`imgId${k}`).style.transition = "0.6s";
@@ -172,7 +174,7 @@ for (let k = 0; k < picturesArray.length; k++) {
 
     closeSlide.addEventListener('click', () => {
         document.getElementById('mainImagesDivId').style.display = "block";
-        document.getElementById('modalId').style.display = "none";
+        document.getElementById('modalContainId').style.display = "none";
         document.getElementById(`imgId${k}`).style.width = "400px";
         document.getElementById(`imgId${k}`).style.height = "280px";
         document.getElementById(`imgId${k}`).style.transition = "0.6s";
@@ -186,6 +188,12 @@ Slide(slideIndex);
 function nextImage(n) {
     Slide(slideIndex += n);
 }
+
+let clickLeft = document.getElementById('leftSpanId');
+clickLeft.addEventListener('click', () => nextImage(-1), );
+
+let clickRight = document.getElementById('rightSpanId');
+clickRight.addEventListener('click', () => nextImage(1));
 
 function Slide(n) {
     let i;

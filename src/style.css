@@ -8,7 +8,7 @@ body {
 }
 #main {
     width: 100%;
-    height: auto;
+    height: -webkit-fill-available;
 }
 /*main div*/
 .mainDivClass {
@@ -39,28 +39,33 @@ body {
 .closeSpanClass {
     display: flex;
     flex-direction: row-reverse;
-    padding-right: 50px;
-    color: grey;
+    padding-right: 30%;
+    color: #3c3535;
     cursor: pointer;
 }
 .leftSpanClass {
-    display: flex;
-    flex-direction: row;
-    color: grey;
+    color: #3c3535;
     font-size: 30px;
+    cursor: pointer;
+    padding-left: 15%;
 }
 
 .rightSpanClass {
     display: flex;
     flex-direction: row-reverse;
-    color: grey;
+    color: #3c3535;
     font-size: 30px;
+    cursor: pointer;
+    padding-right: 30%;
 }
 .imgSlideClass {
-    /*display: none;*/
+    display: none;
     width: 800px;
     height: 560px;
 }
-/*imgSlideDivClass {*/
-    /*display: none;*/
-/*}*/
+.modalContainClass {
+    display: none;
+}
+.imgSlideDivClass {
+    padding-left: 20%;
+}
