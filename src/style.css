@@ -69,3 +69,17 @@ body {
 .imgSlideDivClass {
     padding-left: 20%;
 }
+
+@media only screen and (max-width: 1000px) {
+    .imgSlideClass {
+        height: 280px;
+        width: 400px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .imgSlideClass {
+        height: 360px;
+        width: 600px;
+    }
+}

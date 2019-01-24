@@ -96,8 +96,6 @@ imageSlideDiv.setAttributeNode(imageSlideDivId);
 imageSlideDivClass.value = "imgSlideDivClass";
 imageSlideDiv.setAttributeNode(imageSlideDivClass);
 
-
-
 //image Slide div into modalDiv
 let childSlideDiv = document.getElementById('leftSpanId');
 let parentSlideDiv = childSlideDiv.parentNode;
